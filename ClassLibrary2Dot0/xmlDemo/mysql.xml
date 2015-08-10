@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mysql>
+  <!--mysql服务器地址-->
+  <Server>127.0.0.1</Server>
+  <!--mysql连接端口-->
+  <Port>3306</Port>
+  <!--mysql数据库-->
+  <Database>NPCAdvertiseInterface</Database>
+  <!--mysql用户名-->
+  <Uid>root</Uid>
+  <!--mysql密码-->
+  <Pwd>root</Pwd>
+  <!--mysql编码-->
+  <CharSet>utf8</CharSet>
+</mysql>
