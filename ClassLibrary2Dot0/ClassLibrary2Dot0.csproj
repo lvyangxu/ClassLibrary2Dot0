@@ -79,6 +79,7 @@
     <Compile Include="DoList.cs" />
     <Compile Include="DoLog4Net.cs" />
     <Compile Include="DoMD5.cs" />
+    <Compile Include="DoMvcInit.cs" />
     <Compile Include="DoNPOI.cs" />
     <Compile Include="DoProcessCommand.cs" />
     <Compile Include="DoRandom.cs" />
