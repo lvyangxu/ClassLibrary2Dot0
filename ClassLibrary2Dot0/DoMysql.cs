@@ -88,7 +88,7 @@ namespace ClassLibrary2Dot0
                 DataSet DataSet1 = new DataSet();
                 try
                 {
-                    MySqlDataAdapter1.SelectCommand.CommandTimeout = 3600;
+                    MySqlDataAdapter1.SelectCommand.CommandTimeout = 36000;
                     MySqlDataAdapter1.Fill(DataSet1);
                 }
                 catch (Exception e)
