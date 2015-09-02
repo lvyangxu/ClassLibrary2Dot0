@@ -95,30 +95,37 @@ namespace ClassLibrary2Dot0
                 {
                     XSSFWorkbook xssfworkbook = new XSSFWorkbook(fs);
 
+
                     for (int n = 0; n < xssfworkbook.NumberOfSheets; n++)
                     {
+                        DataTable DataTable1 = new DataTable();
                         ISheet sheet = xssfworkbook.GetSheetAt(n);
 
-                        DataTable DataTable1 = new DataTable();
+                        int maxColumnNum = 0;
+                        for (int rowNum = 0; rowNum < sheet.LastRowNum + 1; rowNum++)
+                        {
+                            IRow IRow1 = sheet.GetRow(rowNum);
+                            if (IRow1 == null)
+                            {
+                                continue;
+                            }
+                            //获取最大的列序号，以此来确定datatable的列名
+                            maxColumnNum = maxColumnNum < IRow1.LastCellNum ? IRow1.LastCellNum : maxColumnNum;
+                        }
+                        //为datatable的列命名
+                        for (int i = 0; i < maxColumnNum; i++)
+                        {
+                            DataColumn DataColumn1 = new DataColumn();
+                            DataColumn1.ColumnName = i.ToString();
+                            DataTable1.Columns.Add(DataColumn1);
+                        }
+
+
+                        
                         for (int rowNum = 0; rowNum < sheet.LastRowNum + 1; rowNum++)
                         {
                             DataRow DataRow1 = DataTable1.NewRow();
                             IRow IRow1 = sheet.GetRow(rowNum);
-
-                            if (IRow1 == null) {
-                                continue;
-                            }
-
-                            //为datatable的列命名
-                            if (rowNum == 0)
-                            {
-                                for (int i = 0; i < IRow1.LastCellNum; i++)
-                                {
-                                    DataColumn DataColumn1 = new DataColumn();
-                                    DataColumn1.ColumnName = i.ToString();
-                                    DataTable1.Columns.Add(DataColumn1);
-                                }
-                            }
 
                             //如果该行数据为空,跳过当前行
                             if (IRow1 == null)
@@ -143,7 +150,7 @@ namespace ClassLibrary2Dot0
                             }
                             DataTable1.Rows.Add(DataRow1);
                         }
-                        
+                        DataTable1.TableName = sheet.SheetName;
                         DataSet1.Tables.Add(DataTable1);
                         DataTable1.Dispose();
                     }

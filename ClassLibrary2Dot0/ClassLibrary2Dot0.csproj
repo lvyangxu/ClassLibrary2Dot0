@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClassLibrary2Dot0</RootNamespace>
     <AssemblyName>ClassLibrary2Dot0</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DocumentFormat.OpenXml">
@@ -75,6 +78,7 @@
     <Compile Include="AddControl.cs" />
     <Compile Include="DatagridviewBindXml.cs" />
     <Compile Include="DoAsyncSocket.cs" />
+    <Compile Include="DoDataTable.cs" />
     <Compile Include="DoHTML.cs" />
     <Compile Include="DoHttpContext.cs" />
     <Compile Include="DoHttpListener.cs" />
@@ -93,7 +97,6 @@
     <Compile Include="DoTime.cs" />
     <Compile Include="DoXml.cs" />
     <Compile Include="DoZipByWinrar.cs" />
-    <Compile Include="DoExcel.cs" />
     <Compile Include="DecodeAndEncode.cs" />
     <Compile Include="FtpRequest.cs" />
     <Compile Include="DoHttpRequest.cs" />
